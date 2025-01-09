@@ -1,0 +1,12 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+# Define the imported target
+add_library(range_lib SHARED IMPORTED)
+
+# Specify the location of the shared library
+set_target_properties(range_lib PROPERTIES
+    IMPORTED_LOCATION "/usr/local/lib/librange_lib.so"
+    INTERFACE_INCLUDE_DIRECTORIES "/usr/local/include/range_lib"
+)
